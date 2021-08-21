@@ -6,10 +6,6 @@
   background-color: #333450;
 }
 
-.blank{
-  margin-top: 100px;
-}
-
 .tabs {
   margin-top: 50px;
   padding-bottom: 40px;
@@ -18,12 +14,62 @@
   margin: 0 auto;
 }
 
-#first-item{
+#all{
   margin-left: 5%;
 }
+/* 탭 스타일 */
+.tab_item {
+  width: calc(100%/10);
+  height: 50px;
+  /* border-bottom: 3px solid #333333; */
+  background-color: #666;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #333333;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
 
-#all_content{
-  display: flex;
+/* 라디오 버튼 UI삭제*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/* 탭 컨텐츠 스타일 */
+.tab_content {
+  margin: 0 auto;
+  display: none;
+  /* padding: 40px 40px 0; */
+  clear: both;
+  height: 55vh;
+  width: 90%;
+  overflow: auto;
+  background-color: #333;
+}
+
+
+/* 선택 된 탭 콘텐츠를 표시 */
+#all:checked ~ #all_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content {
+  display: block;
+}
+
+/* 선택된 탭 스타일 */
+.tabs input:checked + .tab_item {
+  background-color: #333333;
+  color: #fff;
+}
+
+.blank{
+  margin-top: 100px;
 }
 
 .line-wrap{
@@ -47,98 +93,25 @@
   width: 100%;
 }
 
-.general-wrap{
-  width: calc(100%/3.2);
-  margin-left: 50px;
-  height: 74%;
-  transform: translateY(13%);
-  border: #fff;
-  /* background-color: #fff; */
-  border: 1px rgb(187, 187, 187) solid;
-}
-
 .color-wrap{
   width: calc(100%/1.9);
   margin-left: 50px;
   height: 74%;
   transform: translateY(13%);
   border: 1px rgb(187, 187, 187) solid;
-  /* background-color: #fff; */
 }
 
-/* 탭 스타일 */
-.tab_item {
-  width: calc(100%/10);
-  height: 100%;
-  /* border-bottom: 3px solid #333333; */
-  background-color: #666;
-  line-height: 50px;
-  font-size: 16px;
-  text-align: center;
-  color: #333333;
-  display: block;
-  float: left;
-  text-align: center;
-  font-weight: bold;
-  transition: all 0.2s ease;
-}
-
-/* 라디오 버튼 UI삭제*/
-input[name="tab_item"] {
-  display: none;
-}
-
-/* 탭 컨텐츠 스타일 */
-.tab_content {
-  margin: 0 auto;
-  display: none;
-  clear: both;
-  overflow: hidden;
-  background-color: #333333;
-  height: 55vh;
-  width: 90%;
+.general-wrap{
+  width: calc(100%/3.2);
+  margin-left: 50px;
+  height: 74%;
+  transform: translateY(13%);
+  border: #fff;
   overflow: auto;
+  /* background-color: #fff; */
+  border: 1px rgb(187, 187, 187) solid;
 }
 
-
-/* 선택 된 탭 콘텐츠를 표시 */
-#all:checked~#all_content,
-#programming:checked~#programming_content,
-#design:checked~#design_content {
-  display: block;
-}
-
-/* 선택된 탭 스타일 */
-.tabs input:checked+.tab_item {
-  background-color: #333333;
-  color: #fff;
-}
-
-.#color-input {
-  display: none;
-}
-#color-label {
-  margin-left: 15px;
-  position: absolute;
-  height: 30px;
-  width: 50px;
-} 
-#color-input:checked ~ #color-picker {
-  opacity: 1;
-}
-#color-picker {
-  position: absolute;
-  left: 70px; 
-  background-color: white;
-  height: 150px;
-  width: 185px;
-  border: solid 1px #ccc;
-  opacity: 0;
-  padding: 5px;
-}
-canvas:hover {
-  cursor: crosshair;
-}
 
 .general-checkbox{
   margin-left: 18px;
