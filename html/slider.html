@@ -1,0 +1,206 @@
+<div>
+
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js" type="text/javascript"></script>
+    </head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+
+        .keydown-bkg {
+            background-color: #2A2C37;
+        }
+
+        .keydown-bkg>* {
+            display: flex;
+        }
+
+        .keydown-val-bkg {
+            height: 4rem;
+            width: 30%;
+            position: relative;
+            margin-left: auto;
+            margin-right: 10%;
+        }
+
+        .keydown-val {
+            background-color: #4C4E56;
+            width: 100%;
+            height: 4rem;
+            transform: skew(-40deg);
+            cursor: pointer;
+        }
+
+        .key-content {
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            color: #E4515B;
+            z-index: 999;
+            font-weight: bolder;
+            font-size: 1rem;
+            transform: translate(-50%, -50%);
+        }
+
+        .keydown-val:hover {
+            background-color: #6D707C;
+        }
+
+        .keydown-val:active {
+            background-color: #8E92A2;
+        }
+
+        .background {
+            position: absolute;
+            background-color: #383A43;
+            width: 100%;
+            height: 100%;
+        }
+
+        .background>* {
+            margin-top: 1rem;
+        }
+
+        .cut-left-top {
+            content: '';
+            border-top: 1.5rem solid #383A43;
+            border-right: 2rem solid #2A2C37;
+        }
+
+        .cut-right-bottom {
+            align-self: flex-end;
+            content: '';
+            border-bottom: 1.5rem solid #383A43;
+            border-left: 2rem solid #2A2C37;
+        }
+
+        .keydown-desc {
+            display: flex;
+            color: white;
+            font-weight: bolder;
+            flex-grow: 1;
+            font-size: 1.2rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-desc {
+            color: white;
+            font-weight: bolder;
+        }
+
+        .slider-bkg {
+            position: relative;
+            text-align: right;
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            overflow: hidden;
+            width: 100%;
+            height: 10px;
+            background: transparent;
+            cursor: pointer;
+            background: #32313A;
+            border-radius: 1rem;
+        }
+
+        input[type=range]:focus {
+            outline: none;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 1rem;
+            height: 1rem;
+            background: #ffffff;
+            box-shadow: -100vw 0 0 100vw #833D48;
+            border: 0.1px solid #833D48;
+            border-radius: 1rem;
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="background">
+        <div>
+            <div class="slider-bkg">
+                <div class="slider-desc">50</div>
+                <input id='slider' type="range" min="1" max="100" value="50" class="slider" onchange="onChangeSlider()">
+            </div>
+
+        </div>
+
+        <div class='keydown-bkg'>
+            <div>
+                <div class="cut-left-top"></div>
+                <div class="keydown-desc">
+                    <div>
+                        Key
+                    </div>
+                </div>
+                <div class="keydown-val-bkg">
+                    <div class='key-content' id='key-content'></div>
+                    <div class="keydown-val" onclick="onClickKeyBind()"></div>
+                </div>
+                <div class="cut-right-bottom "></div>
+            </div>
+        </div>
+        <div class="v-button">
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const onChangeSlider = () => {
+            const value = $('#slider').attr('value');
+            $('.slider-desc').text(value);
+        }
+
+        let down = false;
+
+        const initSlider = () => {
+            const slider = document.getElementById('slider');
+
+            slider.addEventListener('mousedown', () => {
+                down = true;
+            });
+            slider.addEventListener('mousemove', () => {
+                if (down) {
+                    console.log('asd');
+                    onChangeSlider();
+                }
+            });
+            slider.addEventListener('mouseup', () => {
+                down = false;
+            });
+        }
+
+        let binding = false;
+        let selectedKey = '';
+
+        const onClickKeyBind = () => {
+            binding = !binding;
+            document.addEventListener('keydown', (e) => {
+                if (binding) {
+                    binding = !binding;
+                    selectedKey = e.key.toUpperCase();
+                    $('#key-content').text(selectedKey);
+                }
+            })
+        }
+
+        const init = () => {
+            initSlider();
+        }
+
+
+        init();
+    </script>
+</div>

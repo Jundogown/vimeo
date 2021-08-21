@@ -1,0 +1,89 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #sortable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 60%;
+        }
+
+        #sortable li {
+            position: relative;
+            font-size: 1.4em;
+        }
+
+        #sortable li span {
+            position: absolute;
+            margin-left: -1.3em;
+            font-weight: bolder;
+        }
+
+        .cut-left-top {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 999;
+            content: '';
+            border-top: 1rem solid white;
+            border-right: 1rem solid #4C4E56;
+        }
+
+        .cut-right-bottom {
+            position: absolute;
+            z-index: 999;
+            right: 0;
+            bottom: 0;
+            align-self: flex-end;
+            content: '';
+            border-bottom: 1rem solid white;
+            border-left: 1rem solid #4C4E56;
+        }
+        .li-frame {
+            padding: 1rem;
+            margin: 0.2rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background-color: #4C4E56;
+            color: #a2a8cc;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+        });
+    </script>
+</head>
+
+<body>
+
+    <ul id="sortable">
+        <div class="li-frame">
+            <li>Item 1</li>
+            <div class="cut-left-top"></div>
+            <div class="cut-right-bottom"></div>
+        </div>
+        <div class="li-frame">
+            <li>Item 2</li>
+            <div class="cut-left-top"></div>
+            <div class="cut-right-bottom"></div>
+        </div>
+        <div class="li-frame">
+            <li>Item 3</li>
+            <div class="cut-left-top"></div>
+            <div class="cut-right-bottom"></div>
+        </div>
+        <div class="li-frame">
+            <li>Item 4</li>
+            <div class="cut-left-top"></div>
+            <div class="cut-right-bottom"></div>
+        </div>
+    </ul>
+
+
+</body>
