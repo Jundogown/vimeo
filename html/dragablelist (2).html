@@ -40,6 +40,7 @@
             border-bottom: 1rem solid white;
             border-left: 1rem solid #4C4E56;
         }
+
         .li-frame {
             padding: 1rem;
             margin: 0.2rem;
@@ -62,7 +63,7 @@
 
 <body>
 
-    <ul id="sortable">
+    <ul id="sortable" onmouseup="onSort()">
         <div class="li-frame">
             <li>Item 1</li>
             <div class="cut-left-top"></div>
@@ -87,3 +88,32 @@
 
 
 </body>
+
+<script>
+    const onSort = () => {
+        setTimeout(() => {
+            const list = [];
+            $('.li-frame').map((idx, element) => {
+                if (element.innerHTML.length === 0) {
+                    return;
+                }
+                list.push(element.innerHTML);
+            });
+            sessionStorage.setItem('listItems', JSON.stringify(list));
+        }, 500);
+    }
+
+    const init = () => {
+        const list = JSON.parse(sessionStorage.getItem('listItems'));
+        console.log(list);
+        let newHtml = '';
+        list.forEach(element => {
+            newHtml += '<div class="li-frame">';
+            newHtml += element;
+            newHtml += '</div>';
+        });
+        $('#sortable').html(newHtml)
+    }
+
+    init();
+</script>

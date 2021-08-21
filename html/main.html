@@ -11,6 +11,13 @@
   <script type="text/javascript" src="../js/farbtastic.js"></script>
   <link rel="stylesheet" href="../css/farbtastic.css" type="text/css" />
 
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+      $(function () {
+          $("#sortable").sortable();
+          $("#sortable").disableSelection();
+      });
+  </script>
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function () {
       $('#demo').hide();
@@ -32,10 +39,12 @@
         });
     });
   </script>
-
 </head>
 
 <body class="body">
+  <div>
+    <img url=""/>
+  </div>
   <div class="background">
     <div class="blank"></div>
     <div class="tabs">
@@ -52,74 +61,143 @@
         </div>
         <div class="main-content-wrap">
           <div class="general-wrap">
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
-            <input type="checkbox" class="general-checkbox" name="" id=""><span class="checkbox-ex">aaa</span><br>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            
           </div>
           <div class="color-wrap">
-            <input type="checkbox" id="">
-            enabled
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>Enabled</span>
+            </div>
 
             <div class="slide">
               <form action="" style="width: 500px;">
                 <div id="picker" style="float: right;"></div>
-                <div class="form-item"><label for="color1">CCCCC</label>
-                  <input type="text" id="color" name="color1" class="colorwell" value="#123456" /></div>
-                <div class="form-item"><label for="color2">CCCCC</label><input type="text" id="color2" name="color2"
-                    class="colorwell" value="#123456" /></div>
-                <div class="form-item"><label for="color3">CCCCC</label><input type="text" id="color3" name="color3"
-                    class="colorwell" value="#123456" /></div>
-                <div class="form-item"><label for="color4">CCCCC</label><input type="text" id="color3" name="color3"
-                    class="colorwell" value="#123456" /></div>
-                <div class="form-item"><label for="color5">CCCCC</label><input type="text" id="color3" name="color3"
-                    class="colorwell" value="#123456" /></div>
+                <div class="back">
+                  <div class="form-item"><label for="color1"><span>CCCCC</span></label>
+                    <input type="text" id="color" name="color1" class="colorwell" value="#123456" /></div>
+                </div>
+                <div class="back">
+                  <div class="form-item"><label for="color2"><span>CCCCC</span></label><input type="text" id="color2" name="color2"
+                      class="colorwell" value="#123456" /></div>
+                </div>
+                <div class="back">
+                  <div class="form-item"><label for="color3"><span>CCCCC</span></label><input type="text" id="color3" name="color3"
+                      class="colorwell" value="#123456" /></div>
+                </div>
+                <div class="back">
+                  <div class="form-item"><label for="color4"><span>CCCCC</span></label><input type="text" id="color3" name="color3"
+                      class="colorwell" value="#123456" /></div>
+                </div>
+                <div class="back">
+                  <div class="form-item"><label for="color5"><span>CCCCC</span></label><input type="text" id="color3" name="color3"
+                      class="colorwell" value="#123456" /></div>
+                </div>
               </form>
             </div>
           </div>
         </div>
       </div>
       <div class="tab_content" id="programming_content">
-        <div>
-          <div class="slider-bkg">
-            <div class="slider-desc">50</div>
-            <input id="slider" type="range" min="1" max="100" value="50" class="slider" onchange="onChangeSlider()"
-              onmousedown="onMouseDownSlider()" onmouseup="onMouseUpSlider()" onmousemove="onMouseMoveSlider()">
-          </div>
+        
+        <div class="sec-title">
+          CCCCC
         </div>
-
-        <div class='keydown-bkg'>
-          <div>
-            <div class="cut-left-top"></div>
-            <div class="keydown-desc">
+        <div class="sec-frame">
+          <div class="sec-comp">
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span >CCCCC</span>
+            </div>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            <div class="checkframe" style="display: flex;">
+              <div class="checkbox-frame" onclick="onClick()"></div> <span>CCCCC</span>
+            </div>
+            <div class='keydown-bkg'>
               <div>
-                Key
+                <div class="cut-left-top"></div>
+                <div class="keydown-desc">
+                  <div>
+                    Key
+                  </div>
+                </div>
+                <div class="keydown-val-bkg">
+                  <div class='key-content' id='key-content'></div>
+                  <div class="keydown-val" onclick="onClickKeyBind()"></div>
+                </div>
+                <div class="cut-right-bottom"></div>
               </div>
             </div>
-            <div class="keydown-val-bkg">
-              <div class='key-content' id='key-content'></div>
-              <div class="keydown-val" onclick="onClickKeyBind()"></div>
+            <div>
+              <div class="slider-bkg">
+                <div class="slider-desc">50</div>
+                <input id="slider" type="range" min="1" max="100" value="50" class="slider" onchange="onChangeSlider()"
+                  onmousedown="onMouseDownSlider()" onmouseup="onMouseUpSlider()" onmousemove="onMouseMoveSlider()">
+              </div>
             </div>
-            <div class="cut-right-bottom "></div>
           </div>
-        </div>
-        <div class="v-button">
           <div>
-
+            <div class="sec-comp">
+              <div class="slider-bkg">
+                <div class="slider-desc">50</div>
+                <input id="slider" type="range" min="1" max="100" value="50" class="slider" onchange="onChangeSlider()"
+                  onmousedown="onMouseDownSlider()" onmouseup="onMouseUpSlider()" onmousemove="onMouseMoveSlider()">
+              </div>
+            </div>
+            <div class="sec-comp">
+              <ul id="sortable" onmouseup="onSort()">
+                <div class="li-frame">
+                    <li>Item 1</li>
+                    <div class="cut-left-top-li"></div>
+                    <div class="cut-right-bottom-li"></div>
+                </div>
+                <div class="li-frame">
+                    <li>Item 2</li>
+                    <div class="cut-left-top-li"></div>
+                    <div class="cut-right-bottom-li"></div>
+                </div>
+                <div class="li-frame">
+                    <li>Item 3</li>
+                    <div class="cut-left-top-li"></div>
+                    <div class="cut-right-bottom-li"></div>
+                </div>
+                <div class="li-frame">
+                    <li>Item 4</li>
+                    <div class="cut-left-top-li"></div>
+                    <div class="cut-right-bottom-li"></div>
+                </div>
+            </ul>
+            </div>
           </div>
-        </div>
-        <div>
-          <div class="checkbox-frame" onclick="onClick()"></div>
         </div>
       </div>
     </div>
@@ -132,7 +210,7 @@
   const colorKey = sessionStorage.getItem('colorKey');
 
   if(colorKey !== "#123456"){
-    $("#color").attr('value', colorKey);
+    $('#color').attr('value', colorKey);
   }
 
   const onChangeSlider = () => {
@@ -172,70 +250,20 @@
     })
   }
 
-  $(document).mouseup(function () {
-    sessionStorage.setItem('colorKey', '#123456');
 
+  sessionStorage.setItem('colorKey', '#123456');
+
+  $(document).mouseup(function () {
     const key = $('#color').val();
+    console.log(key)
 
     sessionStorage.setItem('colorKey', key);
 
     const colorKey = sessionStorage.getItem('colorKey');
     console.log(key);
 
-    // $('.colorwell').attr('value', colorKey);
+    $('#color').attr('value', colorKey);
   });
-  $(document).mouseup(function () {
-    sessionStorage.setItem('colorKey', '#123456');
-
-    const key = $('#color').val();
-
-    sessionStorage.setItem('colorKey', key);
-
-    const colorKey = sessionStorage.getItem('colorKey');
-    console.log(key);
-
-    // $('.colorwell').attr('value', colorKey);
-  });
-
-  $(document).mouseup(function () {
-    sessionStorage.setItem('colorKey', '#123456');
-
-    const key = $('#color').val();
-
-    sessionStorage.setItem('colorKey', key);
-
-    const colorKey = sessionStorage.getItem('colorKey');
-    console.log(key);
-
-    // $('.colorwell').attr('value', colorKey);
-  });
-
-  $(document).mouseup(function () {
-    sessionStorage.setItem('colorKey', '#123456');
-
-    const key = $('#color').val();
-
-    sessionStorage.setItem('colorKey', key);
-
-    const colorKey = sessionStorage.getItem('colorKey');
-    console.log(key);
-
-    // $('.colorwell').attr('value', colorKey);
-  });
-
-  $(document).mouseup(function () {
-    sessionStorage.setItem('colorKey', '#123456');
-
-    const key = $('#color').val();
-
-    sessionStorage.setItem('colorKey', key);
-
-    const colorKey = sessionStorage.getItem('colorKey');
-    console.log(key);
-
-    // $('.colorwell').attr('value', colorKey);
-  });
-
 
   let checked = false;
 
@@ -251,6 +279,33 @@
     checked = !checked;
     onChangeChecked();
   }
+
+  const onSort = () => {
+      setTimeout(() => {
+          const list = [];
+          $('.li-frame').map((idx, element) => {
+              if (element.innerHTML.length === 0) {
+                  return;
+              }
+              list.push(element.innerHTML);
+          });
+          sessionStorage.setItem('listItems', JSON.stringify(list));
+      }, 500);
+  }
+
+  const init = () => {
+      const list = JSON.parse(sessionStorage.getItem('listItems'));
+      console.log(list);
+      let newHtml = '';
+      list.forEach(element => {
+          newHtml += '<div class="li-frame">';
+          newHtml += element;
+          newHtml += '</div>';
+      });
+      $('#sortable').html(newHtml)
+  }
+
+  init();
 </script>
 
 </html>
